@@ -18,7 +18,8 @@ import {MonoText} from '../components/StyledText';
 export default class HomeScreen extends React.Component {
   static navigationOptions = {
     header: null,
-    title: 'Welcome'
+    title: 'Home',
+    headerTitle: 'Welcome'
   };
 
   constructor(props) {
@@ -91,9 +92,7 @@ export default class HomeScreen extends React.Component {
     else if (!/(?=.*[A-Z])(?=.*[@$!%*#?&])/.test(password))
       this.setState({errorText: "Passwords must contain 1 uppercase and 1 special character"});
     else
-
-
-      navigate('List', {name: 'Jane'})
+      navigate('List', {navigate: navigate})
   }
 
   _maybeRenderDevelopmentModeWarning() {
