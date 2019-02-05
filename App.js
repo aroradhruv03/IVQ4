@@ -2,11 +2,23 @@ import React from 'react';
 import { Platform, StatusBar, StyleSheet, View } from 'react-native';
 import { AppLoading, Asset, Font, Icon } from 'expo';
 import AppNavigator from './navigation/AppNavigator';
+import {createStackNavigator, createAppNavigator} from 'react-navigation';
+import LinksScreen from "./screens/LinksScreen";
+import HomeScreen from "./screens/HomeScreen";
+
+
+// const MainNavigator = createStackNavigator({
+//     Home: {screen: HomeScreen},
+//     Links: {screen: LinksScreen},
+// });
+
+// createAppNavigator(MainNavigator);
 
 export default class App extends React.Component {
   state = {
     isLoadingComplete: false,
   };
+
 
   render() {
     if (!this.state.isLoadingComplete && !this.props.skipLoadingScreen) {
